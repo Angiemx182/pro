@@ -9,13 +9,33 @@
       margin: 0;
       padding: 0;
       height: 100%;
+      font-family: Arial, sans-serif;
+      color: white;
+      overflow: hidden;
     }
 
     .fullscreen-img {
       width: 100%;
-      height: 100vh; /* Ocupa el alto total de la pantalla */
-      object-fit: cover; /* Evita distorsión */
+      height: 100vh;
+      object-fit: cover;
       display: block;
+    }
+
+    .overlay {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      background: rgba(0,0,0,0.5);
+      padding: 20px 30px;
+      border-radius: 10px;
+    }
+
+    #contador {
+      font-size: 22px;
+      font-weight: bold;
+      margin-top: 8px;
     }
   </style>
 </head>
@@ -25,6 +45,26 @@
        alt="Imagen a pantalla completa"
        class="fullscreen-img">
 
+  <div class="overlay">
+    <h1>¡Bienvenido a mi Web!</h1>
+    <p>Disfruta de mi contenido</p>
+    <p id="contador">Redireccionando en 8...</p>
+  </div>
+
+  <script>
+    let tiempo = 8;
+    const linkDestino = "https://www.effectivegatecpm.com/y5tzvg6grb?key=6df6af7db44fd7d8ea59530072a2833e"; // Cambia aquí tu link de destino
+
+    const intervalo = setInterval(() => {
+      tiempo--;
+      document.getElementById("contador").innerText = `Redireccionando en ${tiempo}...`;
+
+      if (tiempo <= 0) {
+        clearInterval(intervalo);
+        window.location.href = linkDestino;
+      }
+    }, 1000);
+  </script>
+
 </body>
 </html>
-
