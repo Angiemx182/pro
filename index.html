@@ -16,23 +16,23 @@
     .hero {
       width: 100%;
       height: 100vh;
-      background-image: url('https://raw.githubusercontent.com/Angiemx182/pro/main/imagenes/1.jpg'); /* Imagen de GitHub */
-      background-size: cover;       /* Ocupa toda la pantalla */
-      background-position: center center;  /* Asegura que esté centrada */
+      background-image: url('https://raw.githubusercontent.com/Angiemx182/pro/main/imagenes/1.jpg'); /* Raw URL correcta */
+      background-size: cover;
+      background-position: center;
       background-repeat: no-repeat;
       position: relative;
       color: white;
       display: flex;
       justify-content: center;
-      align-items: center; /* Centra todo dentro de la pantalla */
+      align-items: center;
     }
 
     .overlay {
       text-align: center;
-      background: rgba(0,0,0,0.5); /* Fondo semitransparente */
+      background: rgba(0,0,0,0.5);
       padding: 20px 30px;
       border-radius: 10px;
-      max-width: 90%;  /* Asegura que el texto no sobrepase en pantallas pequeñas */
+      max-width: 90%;
     }
 
     #contador {
@@ -42,19 +42,16 @@
     }
 
     h1, p {
-      margin: 0; /* Sin márgenes para una alineación más limpia */
+      margin: 0;
     }
 
-    /* Hacer que el texto se ajuste mejor a pantallas pequeñas */
     @media (max-width: 768px) {
       h1 {
         font-size: 24px;
       }
-
       p {
         font-size: 16px;
       }
-
       #contador {
         font-size: 18px;
       }
