@@ -10,15 +10,18 @@
       padding: 0;
       height: 100%;
       font-family: Arial, sans-serif;
-      color: white;
       overflow: hidden;
     }
 
-    .fullscreen-img {
+    .hero {
       width: 100%;
       height: 100vh;
-      object-fit: cover;
-      display: block;
+      background-image: url('imagenes/1.jpg'); /* ⬅ Tu imagen */
+      background-size: cover; /* ✅ Llena la pantalla */
+      background-position: center center; /* Que se centre bien */
+      background-repeat: no-repeat;
+      position: relative;
+      color: white;
     }
 
     .overlay {
@@ -27,7 +30,7 @@
       left: 50%;
       transform: translate(-50%, -50%);
       text-align: center;
-      background: rgba(0,0,0,0.5);
+      background: rgba(0,0,0,0.4);
       padding: 20px 30px;
       border-radius: 10px;
     }
@@ -41,20 +44,17 @@
 </head>
 <body>
 
-  <img src="https://via.placeholder.com/1080x1920"
-
-       alt="Imagen a pantalla completa"
-       class="fullscreen-img">
-
-  <div class="overlay">
-    <h1>¡Bienvenido a mi Web!</h1>
-    <p>Disfruta de mi contenido</p>
-    <p id="contador">Redireccionando en 8...</p>
+  <div class="hero">
+    <div class="overlay">
+      <h1>¡Bienvenido a mi Web!</h1>
+      <p>Disfruta de mi contenido</p>
+      <p id="contador">Redireccionando en 8...</p>
+    </div>
   </div>
 
   <script>
     let tiempo = 8;
-    const linkDestino = "https://www.effectivegatecpm.com/y5tzvg6grb?key=6df6af7db44fd7d8ea59530072a2833e"; // Cambia aquí tu link de destino
+    const linkDestino = "https://www.effectivegatecpm.com/y5tzvg6grb?key=6df6af7db44fd7d8ea59530072a2833e";
 
     const intervalo = setInterval(() => {
       tiempo--;
@@ -69,3 +69,4 @@
 
 </body>
 </html>
+
