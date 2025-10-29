@@ -5,36 +5,34 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Página de Bienvenida</title>
   <style>
-    html, body {
+    body, html {
       margin: 0;
       padding: 0;
       height: 100%;
       font-family: Arial, sans-serif;
       overflow: hidden;
-      position: relative;
     }
 
-    .hero-img {
-      position: absolute;
-      top: 0;
-      left: 0;
+    .hero {
       width: 100%;
-      height: 100%;
-      object-fit: cover; /* Ajusta la imagen sin distorsión */
-      z-index: -1; /* Detrás del overlay */
+      min-height: 100vh;
+      background-image: url('https://raw.githubusercontent.com/Angiemx182/pro/main/imagenes/1.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      color: white;
     }
 
     .overlay {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
       text-align: center;
       background: rgba(0,0,0,0.5);
       padding: 20px 30px;
       border-radius: 10px;
       max-width: 90%;
-      color: white;
     }
 
     #contador {
@@ -47,8 +45,41 @@
       margin: 0;
     }
 
-    /* Responsive móvil */
     @media (max-width: 768px) {
       h1 { font-size: 24px; }
       p { font-size: 16px; }
-      #contador { font-size
+      #contador { font-size: 18px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="hero">
+    <div class="overlay">
+      <h1>¡Bienvenido a mi Web!</h1>
+      <p>Disfruta de mi contenido</p>
+      <p id="contador"></p>
+    </div>
+  </div>
+
+  <script>
+    let tiempo = 10;
+    const linkDestino = "https://www.effectivegatecpm.com/y5tzvg6grb?key=6df6af7db44fd7d8ea59530072a2833e";
+    const contador = document.getElementById("contador");
+
+    // Mostrar primero el tiempo inicial
+    contador.innerText = `Redireccionando en ${tiempo}...`;
+
+    const intervalo = setInterval(() => {
+      tiempo--;
+      if(tiempo > 0){
+        contador.innerText = `Redireccionando en ${tiempo}...`;
+      } else {
+        clearInterval(intervalo);
+        window.location.href = linkDestino;
+      }
+    }, 1000);
+  </script>
+
+</body>
+</html>
