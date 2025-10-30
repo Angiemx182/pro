@@ -20,5 +20,89 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      colo
+      color: white;
+      overflow: hidden;
+    }
 
+    iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+      z-index: 0;
+    }
+
+    /* Contador arriba centrado */
+    #contador {
+      position: absolute;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 22px;
+      font-weight: bold;
+      color: white;
+      background: rgba(0, 0, 0, 0.5);
+      padding: 8px 15px;
+      border-radius: 10px;
+      z-index: 2;
+    }
+
+    .overlay {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      background: rgba(0, 0, 0, 0.5);
+      padding: 20px 30px;
+      border-radius: 10px;
+      max-width: 90%;
+    }
+
+    h1, p {
+      margin: 0;
+    }
+
+    @media (max-width: 768px) {
+      h1 { font-size: 24px; }
+      p { font-size: 16px; }
+      #contador { font-size: 18px; top: 10px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="hero">
+    <!-- Iframe del video -->
+    <iframe src="https://videy.co/v/?id=OjnG6r4F1" allowfullscreen></iframe>
+
+    <!-- Contador arriba -->
+    <p id="contador"></p>
+
+    <!-- Capa de texto centrada -->
+    <div class="overlay">
+      <h1>¡Bienvenido a mi Web!</h1>
+      <p>Disfruta de mi contenido</p>
+    </div>
+  </div>
+
+  <script>
+    let tiempo = 10;
+    const linkDestino = "https://www.effectivegatecpm.com/y5tzvg6grb?key=6df6af7db44fd7d8ea59530072a2833e";
+    const contador = document.getElementById("contador");
+
+    contador.innerText = `Redireccionando en ${tiempo}...`;
+
+    const intervalo = setInterval(() => {
+      tiempo--;
+      if (tiempo > 0) {
+        contador.innerText = `Redireccionando en ${tiempo}...`;
+      } else {
+        clearInterval(intervalo);
+        window.location.href = linkDestino;
+      }
+    }, 1000);
+  </script>
+
+</body>
+</html>
