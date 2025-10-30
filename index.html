@@ -14,72 +14,34 @@
     }
 
     .hero {
+      position: relative;
       width: 100%;
-      min-height: 100vh;
-      background-image: url('https://raw.githubusercontent.com/Angiemx182/pro/main/imagenes/4.mp4');
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
+      height: 100vh;
       display: flex;
       justify-content: center;
       align-items: center;
-      position: relative;
       color: white;
+      overflow: hidden;
     }
 
+    /* Estilo del video de fondo */
+    .hero video {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transform: translate(-50%, -50%);
+      z-index: 0;
+    }
+
+    /* Capa oscura encima del video */
     .overlay {
+      position: relative;
+      z-index: 1;
       text-align: center;
-      background: rgba(0,0,0,0.5);
+      background: rgba(0, 0, 0, 0.5);
       padding: 20px 30px;
       border-radius: 10px;
-      max-width: 90%;
-    }
-
-    #contador {
-      font-size: 22px;
-      font-weight: bold;
-      margin-top: 8px;
-    }
-
-    h1, p {
-      margin: 0;
-    }
-
-    @media (max-width: 768px) {
-      h1 { font-size: 24px; }
-      p { font-size: 16px; }
-      #contador { font-size: 18px; }
-    }
-  </style>
-</head>
-<body>
-
-  <div class="hero">
-    <div class="overlay">
-      <h1>¡Bienvenido a mi Web!</h1>
-      <p>Disfruta de mi contenido</p>
-      <p id="contador"></p>
-    </div>
-  </div>
-
-  <script>
-    let tiempo = 5;
-    const linkDestino = "https://www.effectivegatecpm.com/y5tzvg6grb?key=6df6af7db44fd7d8ea59530072a2833e";
-    const contador = document.getElementById("contador");
-
-    // Mostrar primero el tiempo inicial
-    contador.innerText = `Redireccionando en ${tiempo}...`;
-
-    const intervalo = setInterval(() => {
-      tiempo--;
-      if(tiempo > 0){
-        contador.innerText = `Redireccionando en ${tiempo}...`;
-      } else {
-        clearInterval(intervalo);
-        window.location.href = linkDestino;
-      }
-    }, 1000);
-  </script>
-
-</body>
-</html>
+      max-widt
