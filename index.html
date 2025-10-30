@@ -19,7 +19,7 @@
       height: 100vh;
       display: flex;
       justify-content: center;
-      align-items: center;
+      align-items: flex-start; /* mueve el contenido hacia arriba */
       color: white;
       overflow: hidden;
     }
@@ -49,8 +49,10 @@
       z-index: 2;
     }
 
+    /* Texto de bienvenida más arriba */
     .overlay {
       position: relative;
+      top: 25vh; /* controla qué tan arriba está el texto */
       z-index: 1;
       text-align: center;
       background: rgba(0, 0, 0, 0.5);
@@ -67,6 +69,7 @@
       h1 { font-size: 24px; }
       p { font-size: 16px; }
       #contador { font-size: 18px; top: 10px; }
+      .overlay { top: 20vh; } /* en móviles un poco más abajo */
     }
   </style>
 </head>
@@ -79,7 +82,7 @@
     <!-- Contador arriba -->
     <p id="contador"></p>
 
-    <!-- Capa de texto centrada -->
+    <!-- Texto centrado más arriba -->
     <div class="overlay">
       <h1>¡Bienvenido a mi Web!</h1>
       <p>Disfruta de mi contenido</p>
@@ -106,3 +109,4 @@
 
 </body>
 </html>
+
